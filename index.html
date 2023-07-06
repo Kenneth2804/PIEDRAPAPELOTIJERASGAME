@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PIEDRA, PAPEL O TIJERAS</title>
+	<style>
+		body{
+			text-align: center;
+			font-family: Arial, sans-serif;
+
+		}
+
+		h1{
+			color: #333;
+		}
+		p{
+			color: #666;
+		}
+		button{
+			padding: 10px 20px;
+			font-size: 16px;
+			background-color: #3498db;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			margin-right: 10px;
+			cursor: pointer;
+		}
+		button:hover{
+			background-color: #2980b9;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>JUEGA PIEDRA PAPEL O TIJERAS</h1>
+	<p>Elige una opción:</p>
+	
+	<button onclick="jugar('piedra')">Piedra</button>
+	<button onclick="jugar('papel')">Papel</button>
+	<button onclick="jugar('tijeras')">Tijeras</button>
+
+<script>
+	function generarEleccionComputadora() {
+		const opciones = ["piedra", "papel", "tijeras"];
+		const indice = Math.floor(Math.random() * opciones.length);
+		return opciones[indice];
+	}
+
+	function determinarGanador(eleccionJugador, eleccionComputadora){
+		if (eleccionJugador === eleccionComputadora) {
+		return "EMPATE PRROOOO"
+	}else if(
+
+			(eleccionJugador === "piedra" && eleccionComputadora === "tijeras")||
+			(eleccionJugador === "papel" && eleccionComputadora === "piedra")||
+			(eleccionJugador === "tijeras" && eleccionComputadora === "papel")
+		){ return "GANASTEEEEEEEEEE!"
+
+	}else{
+		return "Perdiste, Todo tonto equis de"
+	}}
+
+	function jugar(eleccionJugador){
+		const eleccionComputadora = generarEleccionComputadora();
+		const resultado = determinarGanador(eleccionJugador, eleccionComputadora);
+
+		alert("Tu elección: " + eleccionJugador + "\nElección de la computadora: " + eleccionComputadora + "\nResultado: " + resultado )
+
+	}
+</script>
+
+</body>
+</html>
